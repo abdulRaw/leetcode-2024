@@ -7,13 +7,13 @@ var shuffle = function(nums, n) {
 
     let evnIdex =0;
     let oddIndex = n;
-    const newArray = new Array(2*n).fill(-1);
+    const newArray = [];
 
-    for(let i=0;i<newArray.length;i++){
+    for(let i=0;i<2*n;i++){
         if(i%2===0){
-             newArray[i]= nums[evnIdex++];
+             newArray.push(nums[evnIdex++]);
         }else{
-            newArray[i]= nums[oddIndex++];
+            newArray.push(nums[oddIndex++]);
         }
     }
     
