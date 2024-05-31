@@ -39,7 +39,7 @@ var numIdenticalPairs = function(nums) {
 console.log(hash)
     return Object.values(hash).reduce((acc,f)=>{
         if(f>=2){
-            acc+=combinations(f,2)
+            acc+=((f * (f-1)) / 2 )
         }
         return acc;
     },0)
