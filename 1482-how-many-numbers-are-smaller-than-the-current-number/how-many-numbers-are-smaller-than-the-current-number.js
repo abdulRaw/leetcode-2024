@@ -3,17 +3,26 @@
  * @return {number[]}
  */
 var smallerNumbersThanCurrent = function(nums) {
-    const result =[];
-    for(let i =0 ;i< nums.length;i++){
-        const a = nums[i];
-        let c =0;
-        for(let j = 0;j<nums.length;j++){
-          const b = nums[j];
-          if(a>b){
-            c++;
-          }  
-        }
-      result.push(c);  
-    }
-    return result
+  
+    const hash = new Array(101).fill(0);
+    nums.forEach((n)=>{
+        hash[n]++;
+    });
+  
+    let sm =0;
+    const hashCmf ={};
+    hash.forEach((f,n)=>{
+    hashCmf[n] = sm; 
+    sm+=f;
+    })
+    console.log(hash,hashCmf )
+
+    const result = nums.map((n)=>hashCmf[n]  )
+
+
+   
+
+    
+
+    return result;
 }
