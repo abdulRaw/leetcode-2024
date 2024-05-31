@@ -15,14 +15,8 @@ var smallerNumbersThanCurrent = function(nums) {
     hashCmf[n] = sm; 
     sm+=f;
     })
-    console.log(hash,hashCmf )
 
     const result = nums.map((n)=>hashCmf[n]  )
-
-
-   
-
-    
 
     return result;
 }
