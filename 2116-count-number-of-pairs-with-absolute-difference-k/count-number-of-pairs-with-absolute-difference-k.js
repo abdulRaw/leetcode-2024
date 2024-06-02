@@ -8,22 +8,19 @@ var countKDifference = function(nums, k) {
     let count  =0;
     nums.forEach((n,i)=>{
         if(hash[n]){
-            hash[n].push(i);
+            hash[n]++;
         }else {
-             hash[n] = [i]
+             hash[n] =1
         }
 
     })
 
       nums.forEach((n,i)=>{
        
-        const arrIndexs = hash[n-k]?.filter((_)=>_!==i) ?? [];
+        const valCount = hash?.[n-k]??0;
 
-        count+=arrIndexs.length;
+        count+=valCount;
 
-        
-
-        
     })
 
 
