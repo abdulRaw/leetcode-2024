@@ -5,5 +5,13 @@
  */
 var isAnagram = function(s, t) {
 
-    return s.split("").sort((a,b)=>a.charCodeAt(0)-b.charCodeAt(0)).join("")===(t.split("").sort((a,b)=>a.charCodeAt(0)-b.charCodeAt(0))).join("")
+    const hash = new Array(26).fill(0)
+    s.split("").forEach((a)=>{
+        hash[a.charCodeAt(0)-"a".charCodeAt(0)]++;
+    })
+
+    t.split("").forEach((a)=>{
+        hash[a.charCodeAt(0)-"a".charCodeAt(0)]--;
+    })
+    return  hash.every((c)=>c===0)
 };
