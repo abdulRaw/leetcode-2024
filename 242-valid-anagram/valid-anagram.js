@@ -5,6 +5,8 @@
  */
 var isAnagram = function(s, t) {
 
+    if(s.length!==t.length) return false;
+
     const hash = new Array(26).fill(0)
     s.split("").forEach((a)=>{
         hash[a.charCodeAt(0)-"a".charCodeAt(0)]++;
