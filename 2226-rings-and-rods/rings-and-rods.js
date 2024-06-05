@@ -12,7 +12,7 @@ var countPoints = function(rings) {
         }else if(ring==="B"){
              rods[rodIndex][2]++
         }
-         console.log(ring,rodIndex,rods)
+         //console.log(ring,rodIndex,rods)
     }
    const inputArray = rings.split("");
    for(let i=0;i<inputArray.length-1;i=i+2)
