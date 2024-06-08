@@ -33,8 +33,6 @@ var countNegatives = function(grid) {
        if(row[nIdxStart]<0){
             sum+=row.length-nIdxStart;
             prevIndex=prevIndex;
-        }else {
-              prevIndex=row.length-1;
         }
     }
     return sum;
