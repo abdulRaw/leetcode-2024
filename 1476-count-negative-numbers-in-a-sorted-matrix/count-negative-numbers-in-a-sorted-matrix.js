@@ -32,9 +32,7 @@ var countNegatives = function(grid) {
         const nIdxStart = binarySearch(row,0,prevIndex);
        if(row[nIdxStart]<0){
             sum+=row.length-nIdxStart;
-            prevIndex=prevIndex;
-        }else {
-              prevIndex=row.length-1;
+            prevIndex=nIdxStart;
         }
     }
     return sum;
