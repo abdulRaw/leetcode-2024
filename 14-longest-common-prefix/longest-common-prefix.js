@@ -3,11 +3,25 @@
  * @return {string}
  */
 var longestCommonPrefix = function(strs) {
-    const sortedStringbyLength = strs.sort((a,b)=>a.length-b.length); // sort in assending order
-    const smallerLengthStr = sortedStringbyLength[0];
+const sortedStringbyLength = []; // sort in assending order
+//find the smallest string = 
+let minLenStr = strs[0] ;
+let minStrIndex = 0 
+
+for(let i =1;i<strs.length;i++){
+    const currentStr =strs[i];
+    if(currentStr.length<minLenStr.length){
+        minLenStr = currentStr;
+        minStrIndex= i;
+    } 
+}
+const smallerLengthStr = minLenStr;
+
+
 let min = smallerLengthStr.length;
- for(let j=1;j < sortedStringbyLength.length;j++){
-    const word =  sortedStringbyLength[j ];
+ for(let j=0;j < strs.length;j++){
+    if(j!==minStrIndex){
+    const word =  strs[j];
     let count = 0;
     for(let i = 0 ;i< smallerLengthStr.length;i++){
         if(word[i]===smallerLengthStr[i]){
@@ -18,6 +32,7 @@ let min = smallerLengthStr.length;
     } 
 
     min = Math.min(count,min);   
+    }
 }
 
 return smallerLengthStr.substring(0,min)
