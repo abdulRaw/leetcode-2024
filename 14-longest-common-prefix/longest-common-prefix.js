@@ -16,14 +16,13 @@ for(let i =1;i<strs.length;i++){
     } 
 }
 const smallerLengthStr = minLenStr;
-
-
 let min = smallerLengthStr.length;
+
  for(let j=0;j < strs.length;j++){
     if(j!==minStrIndex){
     const word =  strs[j];
     let count = 0;
-    for(let i = 0 ;i< smallerLengthStr.length;i++){
+    for(let i = 0 ;i< min;i++){
         if(word[i]===smallerLengthStr[i]){
            count++; 
         }else{
