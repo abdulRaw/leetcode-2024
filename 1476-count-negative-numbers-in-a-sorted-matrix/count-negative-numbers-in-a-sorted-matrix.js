@@ -20,7 +20,7 @@
  }
 var countNegatives = function(grid) {
     let sum =0;
-    //to-do - still can optime based on colums 
+    //to-do - still can optimze based on colums 
         const row = grid[0];
         const nIdxStart = binarySearch(row,0,row.length-1);
         prevIndex=row.length-1;
