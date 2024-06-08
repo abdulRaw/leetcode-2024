@@ -15,8 +15,6 @@ var isPalindrome = function(x) {
     n= Math.floor(n/10);
    }
 
-   console.log(rev)
-
    return rev==x;
 
 
