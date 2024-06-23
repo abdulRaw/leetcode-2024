@@ -3,16 +3,25 @@
  * @return {string}
  */
 var removeStars = function(s) {
-    const stack = [];
+   // const stack = [];
     const cArray = s.split("");
 
+    let i =0;
     cArray.forEach((c)=>{
         if(c==="*"){
-            stack.pop();
+           i--;
         }else{
-             stack.push(c);
+            cArray[i++] = c;
         }
-    })
+    });
+
+    let res = "";
+    let p =0
+    while(p<i){
+        res+=cArray[p++] 
+    }
+
+
     
-    return stack.join("")
+    return res
 };
