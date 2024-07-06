@@ -10,7 +10,7 @@ var pivotIndex = function(nums) {
     let sumR =0;
     // let  mid =(nums.length%2)===0 ? (nums.length/2)+1 : nums.length/2 ;
     for(i=0;i<nums.length;i++){
-         sumR+=nums[--j];
+         sumR+=nums[i];
     }
      for(i=0;i<nums.length;i++){
          sumR-=nums[i];
