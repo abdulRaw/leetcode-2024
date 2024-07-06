@@ -7,10 +7,6 @@ var passThePillow = function(n, time) {
 
     const totalRoundsCanBecompleted = Math.floor(time/(n-1));
     const lastRoundPeopleCompletedPassingPillow = time%(n-1);
-    console.log(totalRoundsCanBecompleted,lastRoundPeopleCompletedPassingPillow)
-
-   
-
     if(totalRoundsCanBecompleted%2==1){
         let currenlyAt = n;
        // console.log(lastRoundPeopleCompletedPassingPillow)
