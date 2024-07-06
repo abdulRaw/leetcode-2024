@@ -5,7 +5,7 @@
 var increasingTriplet = function(nums) {
     const stack = [nums.length-1];
 
-    let min = Math.MAX
+    let min;
 
     for(let i = nums.length-2;i>=0;i--){
         const num = nums[i];
