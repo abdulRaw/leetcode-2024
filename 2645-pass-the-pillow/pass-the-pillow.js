@@ -7,19 +7,6 @@ var passThePillow = function(n, time) {
 
     const totalRoundsCanBecompleted = Math.floor(time/(n-1));
     const lastRoundPeopleCompletedPassingPillow = time%(n-1);
-    if(totalRoundsCanBecompleted%2==1){
-        let currenlyAt = n;
-       // console.log(lastRoundPeopleCompletedPassingPillow)
-    
-        return currenlyAt-lastRoundPeopleCompletedPassingPillow;
-    }else {
-         let currenlyAt = 1;
-       
-       
-
-        return currenlyAt+lastRoundPeopleCompletedPassingPillow;
-    }
-
-
-    
+    //if last round was in reverse order 
+   return  totalRoundsCanBecompleted%2==1 ? n-lastRoundPeopleCompletedPassingPillow : 1+lastRoundPeopleCompletedPassingPillow
 };
