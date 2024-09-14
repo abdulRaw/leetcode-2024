@@ -4,22 +4,27 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    let hash = {};
-    let result = [] ;
-    nums.forEach((k,i)=>{
-        if(hash[target-k]!==undefined){
-           result =[hash[target-k],i];
 
-           return;
+const result = [];
+
+for(let i =0;i<nums.length;i++)
+{
+    const a = nums[i];
+    for(let j = i+1;j<nums.length;j++) 
+    {
+        const b = nums[j];
+
+        if(a+b===target)
+        {
+         result.push(i,j)   ;
         }
-        hash[k]= i;
-    });
+
+    }
+
+}
+
+
+// console.log(result)
 
 return result
-
-
-
-
-
-
-};
+}
