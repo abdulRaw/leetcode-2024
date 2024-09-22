@@ -4,45 +4,15 @@
  */
 var countGoodSubstrings = function (s) {
 
-//find good string 
+let uniqueStringOfLen3 = 0;
 
-const hash = {};
-let  countOfUniqe3 =0;
-const windowSizeToCheckUnique = 3;
-for(let i =0;i<windowSizeToCheckUnique;i++)
+for(let i = 1 ; i<s.length-1;i++)
 {
-   if(!hash[s[i]])
-   {
-     hash[s[i]] = 0;   
-   }
-
-   hash[s[i]]++;
-}
-
-if(Object.keys(hash).length==3){
-    countOfUniqe3++;
-}
-
-for(let i=windowSizeToCheckUnique;i<s.length;i++)
-{
-    hash[s[i-windowSizeToCheckUnique]]--;
-
-    if(hash[s[i-windowSizeToCheckUnique]]===0)
+    if(s[i-1]!==s[i] && s[i+1]!==s[i] && s[i-1]!==s[i+1])
     {
-        delete hash[s[i-windowSizeToCheckUnique]]
+        uniqueStringOfLen3++;
     }
 
-    if(!hash[s[i]])
-    {
-        hash[s[i]] = 0;   
-    }
-    hash[s[i]]++;
-
-    if(Object.keys(hash).length==3)
-    {
-        countOfUniqe3++;
-    }
 }
-
-    return countOfUniqe3
+return uniqueStringOfLen3;
 };
