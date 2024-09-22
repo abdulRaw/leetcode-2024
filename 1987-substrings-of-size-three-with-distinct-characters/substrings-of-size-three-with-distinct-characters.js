@@ -8,7 +8,8 @@ var countGoodSubstrings = function (s) {
 
 const hash = {};
 let  countOfUniqe3 =0;
-for(let i =0;i<3;i++)
+const windowSizeToCheckUnique = 3;
+for(let i =0;i<windowSizeToCheckUnique;i++)
 {
    if(!hash[s[i]])
    {
@@ -22,13 +23,13 @@ if(Object.keys(hash).length==3){
     countOfUniqe3++;
 }
 
-for(let i=3;i<s.length;i++)
+for(let i=windowSizeToCheckUnique;i<s.length;i++)
 {
-    hash[s[i-3]]--;
+    hash[s[i-windowSizeToCheckUnique]]--;
 
-    if(hash[s[i-3]]===0)
+    if(hash[s[i-windowSizeToCheckUnique]]===0)
     {
-        delete hash[s[i-3]]
+        delete hash[s[i-windowSizeToCheckUnique]]
     }
 
     if(!hash[s[i]])
@@ -42,8 +43,6 @@ for(let i=3;i<s.length;i++)
         countOfUniqe3++;
     }
 }
-
-
 
     return countOfUniqe3
 };
